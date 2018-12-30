@@ -1,0 +1,212 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7417269948003805654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1765768610776828, guid: d81e9873ad9ae254c9a89e4a88fe2f2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7417269949007904099}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7417269948003805653}
+  - component: {fileID: 7417269948003805659}
+  - component: {fileID: 7417269948003805652}
+  m_Layer: 0
+  m_Name: Bandages
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7417269948003805653
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4838041263687818, guid: d81e9873ad9ae254c9a89e4a88fe2f2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7417269949007904099}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7417269948003805654}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: -3.27}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7417269948711190371}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &7417269948003805659
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 33566433588109408, guid: d81e9873ad9ae254c9a89e4a88fe2f2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7417269949007904099}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7417269948003805654}
+  m_Mesh: {fileID: 4300000, guid: ff1d4d921288eb148872d09ab490dab6, type: 3}
+--- !u!23 &7417269948003805652
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 23441705263397356, guid: d81e9873ad9ae254c9a89e4a88fe2f2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7417269949007904099}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7417269948003805654}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 5e0307b1d5a66be41ac79f5cba0ad056, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!1 &7417269948711190302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 1327187013692014, guid: d81e9873ad9ae254c9a89e4a88fe2f2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7417269949007904099}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7417269948711190371}
+  - component: {fileID: 7417269948711190300}
+  - component: {fileID: 7417269948711190301}
+  m_Layer: 0
+  m_Name: Bandages
+  m_TagString: Medicaments
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7417269948711190371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 4602795048681060, guid: d81e9873ad9ae254c9a89e4a88fe2f2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7417269949007904099}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7417269948711190302}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.869363, y: -3.9364915, z: 13.163612}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_Children:
+  - {fileID: 7417269948003805653}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7417269948711190300
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 65059217922157396, guid: d81e9873ad9ae254c9a89e4a88fe2f2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7417269949007904099}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7417269948711190302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 108.76014, y: 48.746742, z: 116.9}
+  m_Center: {x: 4.3945074, y: 23.873371, z: -6.1000166}
+--- !u!114 &7417269948711190301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7417269948711190302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d51e9097f8ffd884ea77df100a51a95b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Remedio: 0
+  Mensagem: {fileID: 0}
+  item: {fileID: 7417269948711190302}
+--- !u!1001 &7417269949007904099
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 23441705263397356, guid: d81e9873ad9ae254c9a89e4a88fe2f2b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5e0307b1d5a66be41ac79f5cba0ad056, type: 2}
+    - target: {fileID: 1327187013692014, guid: d81e9873ad9ae254c9a89e4a88fe2f2b, type: 3}
+      propertyPath: m_TagString
+      value: Medicaments
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327187013692014, guid: d81e9873ad9ae254c9a89e4a88fe2f2b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65059217922157396, guid: d81e9873ad9ae254c9a89e4a88fe2f2b,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 116.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602795048681060, guid: d81e9873ad9ae254c9a89e4a88fe2f2b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.869363
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602795048681060, guid: d81e9873ad9ae254c9a89e4a88fe2f2b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.9364915
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602795048681060, guid: d81e9873ad9ae254c9a89e4a88fe2f2b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.163612
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602795048681060, guid: d81e9873ad9ae254c9a89e4a88fe2f2b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602795048681060, guid: d81e9873ad9ae254c9a89e4a88fe2f2b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602795048681060, guid: d81e9873ad9ae254c9a89e4a88fe2f2b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602795048681060, guid: d81e9873ad9ae254c9a89e4a88fe2f2b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4602795048681060, guid: d81e9873ad9ae254c9a89e4a88fe2f2b, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114185572098625074, guid: d81e9873ad9ae254c9a89e4a88fe2f2b,
+        type: 3}
+      propertyPath: E
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114185572098625074, guid: d81e9873ad9ae254c9a89e4a88fe2f2b, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: d81e9873ad9ae254c9a89e4a88fe2f2b, type: 3}
