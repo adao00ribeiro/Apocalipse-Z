@@ -23,6 +23,7 @@ namespace Snake.ApocalipseZ.Enemy
         public float distanceForAtack;
         public float distanceForFollow;
         public float distanceForWalk;
+        public float distanceOfPlayer;
         public bool atack;
 
         [Header("Settings Audio")]
