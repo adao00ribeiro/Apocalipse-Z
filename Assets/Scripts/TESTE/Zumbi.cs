@@ -20,7 +20,8 @@ namespace Snake.ApocalipseZ.Enemy
         private void Update()
         {
 
-            if(Vector3.Distance(transform.position, player.transform.position) > distanceForWalk)
+
+            if (Vector3.Distance(transform.position, player.transform.position) > distanceForWalk)
             {
                 state = State.WALK;
             }
@@ -72,7 +73,7 @@ namespace Snake.ApocalipseZ.Enemy
                     FollowAndAttack(speedMoviment);
                 }
                 if (state == State.ATTACK)
-                    FollowAndAttack(speedMoviment * 1.5f);
+                    FollowAndAttack(speedMoviment * 0);
 
 
                 // FollowSound();
