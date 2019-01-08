@@ -12,7 +12,9 @@ ModelImporter:
     2000000: Camera
     2100000: pinetree
     2300000: pine.001
+    2300002: //RootNode
     3300000: pine.001
+    3300002: //RootNode
     4300000: pine.001
   externalObjects: {}
   materials:
