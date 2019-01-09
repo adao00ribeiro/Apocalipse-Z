@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Game Login.unity
+    path: Assets/Scenes/Game Login.unity
     guid: 9f75a5c6f3393964faa3f84c48b89c7b
   - enabled: 1
     path: Assets/Scenes/Game Menu.unity
@@ -15,17 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Game Loading.unity
     guid: 7bde699dc633e5144b489b151393f054
   - enabled: 1
-    path: Assets/Scenes/Scenes For Testing/cenaAdao.unity
-    guid: 38977ec06f9bbe7418ac6fab8c62af14
-  - enabled: 1
-    path: Assets/Scenes/Scenes For Testing/Marcial.unity
+    path: Assets/Scenes/Mundo.unity
     guid: f0f5af033127d425b8a8f247f218999e
   - enabled: 1
     path: Assets/Scenes/Game Lobby.unity
     guid: b16ca42b92f184aba93839132cb62343
-  - enabled: 1
-    path: Assets/Scenes/proejtoAP.unity
-    guid: b531e6de017944b4e91a15ade11e2726
   - enabled: 1
     path: Assets/Scenes/Servidor.unity
     guid: f99d53961a150474084cea40d7a89934
