@@ -877,10 +877,10 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   state: 0
   health: 100
-  speedMoviment: 0.5
+  speedMoviment: 1
   strong: 0
   distanceForAttack: 0
-  distancePatrol: 10
+  distancePatrol: 20
   respawnTime: 0
   attack: {fileID: 0}
   hit: {fileID: 0}

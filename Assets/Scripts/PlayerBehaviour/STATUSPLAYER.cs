@@ -147,15 +147,15 @@ public class STATUSPLAYER : MonoBehaviour
         if(currentStamina <= 0)
         {
             winStamina = winStamina * Time.deltaTime;
-            GetComponent<MovimentPlayer>().runSpeed = GetComponent<MovimentPlayer>().walkSpeed;
-            GetComponent<MovimentPlayer>().jumpForce = 0;
+            GetComponent<MovimentPlayer>().RunSpeed = GetComponent<MovimentPlayer>().WalkSpeed;
+            GetComponent<MovimentPlayer>().JumpForce = 0;
             currentStamina = 0;
 
         }
         if (currentStamina >= 10)
         {
-            GetComponent<MovimentPlayer>().runSpeed = GetComponent<MovimentPlayer>().runSpeed;
-            GetComponent<MovimentPlayer>().jumpForce = 5;
+            GetComponent<MovimentPlayer>().RunSpeed = GetComponent<MovimentPlayer>().RunSpeed;
+            GetComponent<MovimentPlayer>().JumpForce = 5;
 
         }
 

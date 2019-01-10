@@ -1,20 +1,27 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 
-public class MovimentPlayer  : MonoBehaviour
+public class MovimentPlayer  : PlayerVariaveis
 {
+    public bool ganhandoStamina = true;
+
+    public GameObject playerUIInstance;
+
+    [SerializeField]
+    GameObject playerUIPrefab;
 
     private CameraController cameraPlayer;
     Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
-    public float speed, walkSpeed, runSpeed, jumpForce;
 
     // Use this for initialization
     void Start()
     {
-        speed = walkSpeed;
+        
+        Speed = WalkSpeed;
         transform.tag = "Player";
         cameraPlayer = GetComponentInChildren<CameraController>();
         controller = GetComponent<CharacterController>();
@@ -26,27 +33,32 @@ public class MovimentPlayer  : MonoBehaviour
     // Update is called once per frame
     private void Update ()
 	{
-		//pega direcao da camera de frente e de lado e multiplica com inputs horizontal e vertical	
-		Vector3 directFinal = Input.GetAxis ("Vertical") * cameraPlayer.direcaoFrente () + Input.GetAxis ("Horizontal") * cameraPlayer.direcaoDireita ();
+        
+
+       // FicarComFome();
+        //pega direcao da camera de frente e de lado e multiplica com inputs horizontal e vertical	
+        Vector3 directFinal = Input.GetAxis ("Vertical") * cameraPlayer.direcaoFrente () + Input.GetAxis ("Horizontal") * cameraPlayer.direcaoDireita ();
 		directFinal.Normalize ();
 		if (controller.isGrounded) {
 			//determina a direcao de movimento e multiplica com o moveSpeed
 
-			moveDirection = new Vector3 (directFinal.x, 0, directFinal.z)*speed;
+			moveDirection = new Vector3 (directFinal.x, 0, directFinal.z)*Speed;
 
 
 			if (Input.GetButtonDown ("Jump")) {
-				moveDirection.y = jumpForce;
+				moveDirection.y = JumpForce;
 			}
 
 			//muda velocidade para correr
 			if (Input.GetButton("correr")||Input.GetButtonDown("correr")) {
 
-				speed = runSpeed;
-			}
+				Speed = RunSpeed;
+                this.Stamina1 = this.Stamina1 - 5;
+
+            }
 			if(Input.GetButtonUp("correr")) {
 
-				speed = walkSpeed ;
+				Speed = WalkSpeed ;
 			}
 
 
@@ -56,11 +68,11 @@ public class MovimentPlayer  : MonoBehaviour
 		if(Input.GetButton("agachar")||Input.GetButtonDown ("agachar")){
 
 			controller.height = 1.5f;
-			speed = 1;
+			Speed = 1;
 		}
 		if(Input.GetButtonUp ("agachar")){
 			controller.height = 2f;
-			speed = walkSpeed;
+			Speed = WalkSpeed;
 		}
 		//aplica gravidade
 		moveDirection.y += Physics.gravity.y * Time.deltaTime;
@@ -70,6 +82,8 @@ public class MovimentPlayer  : MonoBehaviour
 		cameraPlayer.camController ();
 	}
 
-
-
+    public static implicit operator MovimentPlayer(PlayerMovement v)
+    {
+        throw new NotImplementedException();
+    }
 }
