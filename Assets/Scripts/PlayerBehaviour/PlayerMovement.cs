@@ -1,14 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
 
-
-public class PlayerMovement  :NetworkBehaviour
+public class PlayerMovement  :PlayerVariaveis
 {
-    public bool teste;
+ 
     [Header("SETUP")]
-
 
     [SerializeField]
     MonoBehaviour[] componentesDesativados;
@@ -29,12 +26,7 @@ public class PlayerMovement  :NetworkBehaviour
     public GameObject playerUIInstance;
 
     [Space(3)]
-    [Header("VARIAVEISPLAYER")]
-    public int vida;
-    public float speed;
-    public float walkSpeed;
-    public float runSpeed;
-    public float jumpForce;
+    
    
     private CameraController cameraPlayer;
     Vector3 moveDirection = Vector3.zero;
@@ -42,7 +34,7 @@ public class PlayerMovement  :NetworkBehaviour
     // Use this for initialization
     void Start ()
 	{
-		speed = walkSpeed;
+		this.Speed = this.WalkSpeed;
 		transform.tag = "Player";
 		cameraPlayer = GetComponentInChildren<CameraController> ();
 		controller = GetComponent<CharacterController> ();
@@ -67,7 +59,7 @@ public class PlayerMovement  :NetworkBehaviour
             // Create PlayerUI
             playerUIInstance = Instantiate(playerUIPrefab);
             playerUIInstance.name = playerUIPrefab.name;
-
+            playerUIInstance.GetComponent<PlayerUI>().setPlayer(GetComponent<PlayerMovement>());
 
         }
     }
@@ -75,10 +67,7 @@ public class PlayerMovement  :NetworkBehaviour
 	// Update is called once per frame
 	private void Update ()
 	{
-        if (teste) {
-            recebeDano(50);
-            teste = false;
-        }
+    
         if (!isLocalPlayer)
         {
             return;
@@ -89,21 +78,23 @@ public class PlayerMovement  :NetworkBehaviour
 		if (controller.isGrounded) {
 			//determina a direcao de movimento e multiplica com o moveSpeed
 
-			moveDirection = new Vector3 (directFinal.x, 0, directFinal.z)*speed;
+			moveDirection = new Vector3 (directFinal.x, 0, directFinal.z)* this.Speed;
+      
 
 
 			if (Input.GetButtonDown ("Jump")) {
-				moveDirection.y = jumpForce;
+				moveDirection.y = this.JumpForce;
 			}
 
 			//muda velocidade para correr
-			if (Input.GetButton("correr")||Input.GetButtonDown("correr")) {
+			if (Input.GetButton("correr")||Input.GetButtonDown("correr") && this.Stamina1>0){
 
-				speed = runSpeed;
+                this.Speed = this.RunSpeed;
+                this.Stamina1 = this.Stamina1 - 5;
 			}
 			if(Input.GetButtonUp("correr")) {
 
-				speed = walkSpeed ;
+                this.Speed = this.WalkSpeed ;
 			}
 
 
@@ -113,14 +104,44 @@ public class PlayerMovement  :NetworkBehaviour
 		if(Input.GetButton("agachar")||Input.GetButtonDown ("agachar")){
 
 			controller.height = 1.5f;
-			speed = 1;
+            this.Speed = 1;
 		}
 		if(Input.GetButtonUp ("agachar")){
 			controller.height = 2f;
-			speed = walkSpeed;
-		}
-		//aplica gravidade
-		moveDirection.y += Physics.gravity.y * Time.deltaTime;
+            this.Speed = this.WalkSpeed;
+        
+         }
+        //--------------LANTERNA----------------------
+        if (Input.GetButtonUp("lanterna"))
+        {
+            print("ativa lanterna");
+
+        }
+        //--------------MAPA----------------------
+        if (Input.GetButtonUp("mapa"))
+        {
+
+            print("ABRE O MAPA");
+        }
+        //--------------INTERAGI----------------------
+        if (Input.GetButtonUp("interacao"))
+        {
+            print("INTERAGE COM OBJETOS");
+
+        }
+        //--------------INVENTARIO----------------------
+        if (Input.GetButtonUp("inventario"))
+        {
+
+            print("ABRE O INVENTARIO");
+        }
+        if (Input.GetButtonUp("visaonoturna"))
+        {
+            print("ATIVA VISAO NOTURNA");
+
+        }
+        //aplica gravidade
+        moveDirection.y += Physics.gravity.y * Time.deltaTime;
 		//move o personagem 
 		controller.Move (moveDirection * Time.deltaTime);
 		//controle da camera 	
@@ -154,8 +175,7 @@ public class PlayerMovement  :NetworkBehaviour
     }
     public void recebeDano(int dano)
     {
-
-        playerUIInstance.GetComponent<PlayerUI>().atualizaBarraVida(20);
+        this.Vida = this.Vida - dano;
     }
 
 }

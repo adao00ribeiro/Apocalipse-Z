@@ -155,7 +155,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02784aa03f1790a409fa82e5db6a1c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teste: 0
+  vida: 1000
+  Stamina: 1000
+  Sede: 1000
+  Fome: 1000
+  speed: 0
+  walkSpeed: 4
+  runSpeed: 10
+  jumpForce: 5
   componentesDesativados:
   - {fileID: 3391848349505264532}
   remoteLayerName: RemotePlayer
@@ -164,11 +171,6 @@ MonoBehaviour:
   playerUIPrefab: {fileID: 7381614063501841431, guid: f7464ddb8604dad448aaeea119ecf3f0,
     type: 3}
   playerUIInstance: {fileID: 0}
-  vida: 0
-  speed: 0
-  walkSpeed: 4
-  runSpeed: 10
-  jumpForce: 5
 --- !u!143 &3391848349077937738
 CharacterController:
   m_ObjectHideFlags: 0
