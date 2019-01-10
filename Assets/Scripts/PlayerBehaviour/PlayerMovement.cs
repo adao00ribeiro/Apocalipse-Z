@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement  :PlayerVariaveis
 {
- 
+    public Transform packArmas;
+    public GameObject ArmaEquipada;
     [Header("SETUP")]
 
     [SerializeField]
@@ -34,6 +35,10 @@ public class PlayerMovement  :PlayerVariaveis
     // Use this for initialization
     void Start ()
 	{
+        foreach (Transform arma in packArmas) {
+            arma.gameObject.SetActive(true);
+            ArmaEquipada = arma.gameObject;
+        }
 		this.Speed = this.WalkSpeed;
 		transform.tag = "Player";
 		cameraPlayer = GetComponentInChildren<CameraController> ();
@@ -138,6 +143,14 @@ public class PlayerMovement  :PlayerVariaveis
         if (Input.GetButtonUp("visaonoturna"))
         {
             print("ATIVA VISAO NOTURNA");
+
+        }
+        if (Input.GetMouseButton(0))
+        {
+            if (ArmaEquipada != null) {
+                ArmaEquipada.GetComponent<Arma_Generica>().Atirar();
+            }
+           
 
         }
         //aplica gravidade
