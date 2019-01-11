@@ -1873,6 +1873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ac9e31601571b43adaa47e0d050976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nomeArma: Pistola
   balas: 0
   totalBalas: 12
   regarga: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pistola : Arma_Generica
 {
-
+   
     // Start is called before the first frame update
     public void Start()
     {

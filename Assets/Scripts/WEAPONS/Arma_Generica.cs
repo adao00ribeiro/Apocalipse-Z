@@ -5,6 +5,8 @@ using UnityEngine;
 public abstract class Arma_Generica : MonoBehaviour
 {
     [SerializeField]
+    public string nomeArma;
+    [SerializeField]
     protected int balas;
     [SerializeField]
     protected int totalBalas;
@@ -16,4 +18,8 @@ public abstract class Arma_Generica : MonoBehaviour
     
     
     public  abstract void Atirar();
+
+    public int getBalas() {
+        return balas;
+    }
 }

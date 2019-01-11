@@ -11,7 +11,12 @@ public class PlayerUI : MonoBehaviour
     public Slider slideStamina;
 
 
-        private void Update()
+    [SerializeField]
+    private Arma_Generica Arma;
+    public Text nomearma;
+    public Text numerodebalas;
+
+    private void Update()
         {
         //-----------ATUALIZA HUD PLAYER-----------
             slideVida.value = player.Vida / 1000;
@@ -19,11 +24,13 @@ public class PlayerUI : MonoBehaviour
             slideSede.value = player.Sede1 / 1000;
             slideStamina.value = player.Stamina1 / 1000;
         //-----------ATUALIZA HUD PLAYER - Armas -----------
-
+        nomearma.text = Arma.nomeArma;
+        numerodebalas.text = Arma.getBalas().ToString();
         }
 
     public void setPlayer(PlayerMovement player) {
 
         this.player = player;
+        Arma = player.ArmaEquipada.GetComponent<Arma_Generica>();
     }
 }
