@@ -45,6 +45,7 @@ namespace Snake.ApocalipseZ.Enemys {
         protected float distance;
         protected bool isDied;
         protected Vector3 target;
+        [SerializeField]
         protected Transform player;
         protected float timer;
         protected float timeToRand = 5;
