@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Snake.ApocalipseZ.Enemys;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,22 +30,25 @@ public class PlayerMovement  :PlayerVariaveis
     [Space(3)]
 
 
-    private bool ganhandostamina = true, on = true, fomeon = true, sedeon = true;
     private CameraController cameraPlayer;
     Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
     // Use this for initialization
     void Start ()
 	{
-<<<<<<< HEAD
+        InvokeRepeating("FicandoComFome", 90, 90);
+        InvokeRepeating("FicandoComSede", 60, 60);
+        InvokeRepeating("RestaurandoStamina", 0.3f, 0.3f);
+
+        //<<<<<<< HEAD
         this.Speed = this.WalkSpeed;
-=======
+//=======
         foreach (Transform arma in packArmas) {
             arma.gameObject.SetActive(true);
             ArmaEquipada = arma.gameObject;
         }
 		this.Speed = this.WalkSpeed;
->>>>>>> 591b1421872d37dce921c66762e728477f716c54
+//>>>>>>> 591b1421872d37dce921c66762e728477f716c54
 		transform.tag = "Player";
 		cameraPlayer = GetComponentInChildren<CameraController> ();
 		controller = GetComponent<CharacterController> ();
@@ -93,48 +97,22 @@ public class PlayerMovement  :PlayerVariaveis
 
 
 			if (Input.GetButtonDown ("Jump")) {
-                ganhandostamina = false;
                 moveDirection.y = this.JumpForce;
                 this.Stamina1 = this.Stamina1 - 30;
             }
-            else
-            {
-                ganhandostamina = true;
-            }
+
 
 			//muda velocidade para correr
 			if (Input.GetButton("correr")||Input.GetButtonDown("correr") && this.Stamina1 <= 1000){
-                ganhandostamina = false;
                 this.Speed = this.RunSpeed;
                 this.Stamina1 = this.Stamina1 - 3;
 			}
-            else
-            {
-                ganhandostamina = true;
-            }
 
 			if(Input.GetButtonUp("correr")) {
                 this.Speed = this.WalkSpeed ;
             }
-            if (Input.GetKey(KeyCode.W) && this.Stamina1 <= 0)
-            {
-                ganhandostamina = true;
-                on = true;
-            }
 
-        //----------------Seta Stamina---------------
-            if(ganhandostamina == true && on == true)
-            {
-                StartCoroutine("loopGanhoEstamina");
-            }
-            if(this.Stamina1 >= 1000)
-            {
-                this.Stamina1 = 1000;
-            }       
-            if (this.Stamina1 <= 0)
-            {
-                this.Stamina1 = 0;
-            }
+        //----------------Seta Stamina---------------    
             if (this.Stamina1 <= 10)
             {
                 Speed = WalkSpeed;
@@ -144,38 +122,14 @@ public class PlayerMovement  :PlayerVariaveis
             {
                 JumpForce = 5;
             }
-        }
-
-        //----------------seta fome------------
-
-        if(fomeon == true)
-        {
-             this.Fome1 -= 5;
-            StartCoroutine("FicandoComFome");
-        }
-        if(this.Fome1 >= 1000)
-        {
-            this.Fome1 = 1000;
-        }
-        if(this.Fome1 <= 0)
-        {
-            this.Fome1 = 0;
-        }
-
-        //---------------seta sede------------------
-
-        if(sedeon == true)
-        {
-            this.Sede1 -= 5;
-            StartCoroutine("FicandoComSede");
-        }
-        if(this.Sede1 >=1000)
-        {
-            this.Sede1 = 1000;
-        }
-        if(this.Sede1 <=0)
-        {
-            this.Sede1 = 0;
+            if(this.Stamina1 < 0)
+            {
+                this.Stamina1 = 0;
+            }
+            if (this.Stamina1 > 1000)
+            {
+                this.Stamina1 = 1000;
+            }
         }
 
 		//--------------agacha----------------------
@@ -261,29 +215,21 @@ public class PlayerMovement  :PlayerVariaveis
     }
     public void recebeDano(int dano)
     {
-        this.Vida = this.Vida - dano;
+        this.Vida = this.Vida - GetComponent<EnemyBase>().dano;
     }
 
-    IEnumerator loopGanhoEstamina()
+    void RestaurandoStamina()
     {
-        on = false;
-        this.Stamina1 += 7;
-        yield return new WaitForSeconds(0.1f);
-        on = true;
-        yield return new WaitForSeconds(0.1f);
+        this.Stamina1 += 5;
     }
 
-    IEnumerator FicandoComFome()
+    void FicandoComFome()
     {
-        fomeon = false;
-        yield return new WaitForSeconds(90);
-        fomeon = true;
+        this.Fome1 -= 5;
     }
 
-    IEnumerator FicandoComSede()
+    void FicandoComSede()
     {
-        sedeon = false;
-        yield return new WaitForSeconds(60);
-        sedeon = true;
+        this.Sede1 -= 5;
     }
 }

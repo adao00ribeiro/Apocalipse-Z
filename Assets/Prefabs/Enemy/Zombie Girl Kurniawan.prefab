@@ -821,7 +821,6 @@ GameObject:
   - component: {fileID: 195491850049040416}
   - component: {fileID: 114774169583820786}
   - component: {fileID: 114566958282421698}
-  - component: {fileID: 4259751306030062104}
   m_Layer: 0
   m_Name: Zombie Girl Kurniawan
   m_TagString: Untagged
@@ -877,11 +876,16 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   state: 0
   health: 100
-  speedMoviment: 1
-  strong: 0
-  distanceForAttack: 0
-  distancePatrol: 20
   respawnTime: 0
+  dano: 3
+  speedMoviment: 1
+  distancePatrol: 20
+  TimeAttack: 1.7
+  distanceForAtack: 1.9
+  distanceForFollow: 25
+  distanceForWalk: 30
+  distanceOfPlayer: 0
+  atack: 0
   attack: {fileID: 0}
   hit: {fileID: 0}
   die: {fileID: 0}
@@ -979,22 +983,6 @@ MonoBehaviour:
   param3: 
   param4: 
   param5: 
---- !u!54 &4259751306030062104
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296779489936310}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1347492581456600
 GameObject:
   m_ObjectHideFlags: 0

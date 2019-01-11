@@ -20,11 +20,18 @@ namespace Snake.ApocalipseZ.Enemys {
 
         [Header("Settings Character")]
         [SerializeField] protected float health;
-        [SerializeField] protected float speedMoviment;
-        [SerializeField] protected float strong;
-        [SerializeField] protected float distanceForAttack;
-        [SerializeField] protected float distancePatrol;
         [SerializeField] protected float respawnTime;
+        [SerializeField] public int dano;
+        [SerializeField] protected float speedMoviment;
+        [SerializeField] protected float distancePatrol;
+
+        [Header("Settings Actions")]
+        [SerializeField] protected float TimeAttack;
+        [SerializeField] protected float distanceForAtack;
+        [SerializeField] protected float distanceForFollow;
+        [SerializeField] protected float distanceForWalk;
+        [SerializeField] protected float distanceOfPlayer;
+        [SerializeField] protected bool atack;
 
         [Header("Settings Audio")]
         public AudioClip attack;
@@ -75,5 +82,13 @@ namespace Snake.ApocalipseZ.Enemys {
 
         protected abstract void OnDamage();
         protected abstract void OnDie();
+        IEnumerator Batendo()
+        {
+            atack = false;
+            yield return new WaitForSeconds(2);
+            atack = true;
+            yield return new WaitForSeconds(TimeAttack);
+            atack = false;
+        }
     }
 }

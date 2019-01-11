@@ -14,32 +14,62 @@ namespace Snake.ApocalipseZ.Enemys {
         }
 
         [ServerCallback]
-        private void Update() {
-            if(state == State.IDLE) {
-                agent.speed = 0;
-                agent.SetDestination(transform.position);
+        private void Update()
+        {
+            if (Vector3.Distance(transform.position, player.transform.position) > distanceForWalk)
+            {
+                state = State.WALK;
             }
 
-            if(state == State.WALK) {
-                if(Time.time > timer) {
-                    timer = Time.time + timeToRand;
-                    var newPos = Random.insideUnitSphere * distancePatrol;
-                    newPos += transform.position;
-                    target = newPos;
-                }
-                
-                agent.speed = speedMoviment;
-                agent.SetDestination(target);
-            }
-
-            if(state == State.FOLLOW) 
+            if (Vector3.Distance(transform.position, player.transform.position) < distanceForFollow)
+            {
                 FollowAndAttack(speedMoviment);
+                state = State.FOLLOW;
+            }
+            if (Vector3.Distance(transform.position, player.transform.position) < distanceForAtack)
+            {
+                state = State.ATTACK;
+                if (atack == true)
+                {
+                    StartCoroutine("Batendo");
+                    Debug.Log("Bateu");
+                }
+            }
+            else
+            {
+                atack = true;
+            }
 
-            if(state == State.ATTACK) 
-                FollowAndAttack(speedMoviment * 2);
-            
-            FollowSound();
-            SetAnimations();
+            {
+                SetAnimations();
+
+                if (state == State.IDLE)
+                {
+                    agent.speed = 0;
+                    agent.SetDestination(transform.position);
+                }
+
+                if (state == State.WALK)
+                {
+                    if (Time.time > timer)
+                    {
+                        timer = Time.time + timeToRand;
+                        var newPos = Random.insideUnitSphere * distancePatrol;
+                        newPos += transform.position;
+                        target = newPos;
+                    }
+
+                    agent.speed = speedMoviment;
+                    agent.SetDestination(target);
+                }
+
+                if (state == State.FOLLOW)
+                {
+                    FollowAndAttack(speedMoviment);
+                }
+                if (state == State.ATTACK)
+                    FollowAndAttack(speedMoviment * 0);
+            }
         }
 
 
