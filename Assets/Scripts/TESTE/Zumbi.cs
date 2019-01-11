@@ -37,7 +37,7 @@ namespace Snake.ApocalipseZ.Enemy
                 if (atack == true)
                 {
                     StartCoroutine("Batendo");
-                    STATUSPLAYER.currentLife -= dano;
+        //            STATUSPLAYER.currentLife -= dano;
                 }
             }
             else

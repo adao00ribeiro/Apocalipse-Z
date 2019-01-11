@@ -34,6 +34,7 @@ public class Cliente : MonoBehaviour
         RefreshRoomList();
 
     }
+  
     public void RefreshRoomList()
     {
         ClearRoomList();

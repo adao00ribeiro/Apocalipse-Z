@@ -36,19 +36,19 @@ public class PlayerMovement  :PlayerVariaveis
     // Use this for initialization
     void Start ()
 	{
-        InvokeRepeating("FicandoComFome", 90, 90);
-        InvokeRepeating("FicandoComSede", 60, 60);
+        InvokeRepeating("FicandoComFome", 1, 1);
+        InvokeRepeating("FicandoComSede", 1, 1);
         InvokeRepeating("RestaurandoStamina", 0.3f, 0.3f);
 
-        //<<<<<<< HEAD
+
         this.Speed = this.WalkSpeed;
-//=======
+
         foreach (Transform arma in packArmas) {
             arma.gameObject.SetActive(true);
             ArmaEquipada = arma.gameObject;
         }
 		this.Speed = this.WalkSpeed;
-//>>>>>>> 591b1421872d37dce921c66762e728477f716c54
+
 		transform.tag = "Player";
 		cameraPlayer = GetComponentInChildren<CameraController> ();
 		controller = GetComponent<CharacterController> ();
@@ -112,24 +112,7 @@ public class PlayerMovement  :PlayerVariaveis
                 this.Speed = this.WalkSpeed ;
             }
 
-        //----------------Seta Stamina---------------    
-            if (this.Stamina1 <= 10)
-            {
-                Speed = WalkSpeed;
-                JumpForce = 0;
-            }
-            else
-            {
-                JumpForce = 5;
-            }
-            if(this.Stamina1 < 0)
-            {
-                this.Stamina1 = 0;
-            }
-            if (this.Stamina1 > 1000)
-            {
-                this.Stamina1 = 1000;
-            }
+     
         }
 
 		//--------------agacha----------------------

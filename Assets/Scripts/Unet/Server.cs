@@ -13,8 +13,9 @@ public class Server : MonoBehaviour
     NetworkManager networkManager;
     public GameObject playerServe;
 
-void Start()
-    {
+    // criado so para testar singleplayer
+    public void iniciar() {
+
         networkManager = NetworkManager.singleton;
 
         if (networkManager.matchMaker == null)
@@ -25,6 +26,20 @@ void Start()
             CreateInternetMatch("Servidor");
         }
 
+    }
+void Start()
+    {
+        /*
+        networkManager = NetworkManager.singleton;
+
+        if (networkManager.matchMaker == null)
+        {
+
+            networkManager.playerPrefab = playerServe;
+            networkManager.StartMatchMaker();
+            CreateInternetMatch("Servidor");
+        }
+        */
        
     }
    

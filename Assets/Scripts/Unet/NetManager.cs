@@ -28,7 +28,7 @@ public class NetManager : NetworkManager
         }
         else
         {
-            GameObject player = Instantiate(spawnPrefabs[0], new Vector3(389.3574f, 12.7f, 275.6585f), Quaternion.identity) as GameObject;
+            GameObject player = Instantiate(spawnPrefabs[0], new Vector3(379.693f, 33.65f, 519.3025f), Quaternion.identity) as GameObject;
             NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
 
         }
