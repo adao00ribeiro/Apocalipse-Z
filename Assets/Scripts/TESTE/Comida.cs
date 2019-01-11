@@ -31,15 +31,15 @@ public class Comida : MonoBehaviour
             switch(Comidas)
             {
                 case SetarComidas.Chocolate:
-                    STATUSPLAYER.biscoito += 1;
+
                     Mensagem.text = "";
                     break;
                 case SetarComidas.Biscoito:
-                    STATUSPLAYER.biscoito += 1;
+
                     Mensagem.text = "";
                     break;
                 case SetarComidas.Lasanha:
-                    STATUSPLAYER.lasanha += 1;
+
                     Mensagem.text = "";
                     break;
             }

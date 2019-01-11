@@ -31,15 +31,15 @@ public class Remedios : MonoBehaviour
             switch(Remedio)
             {
                 case SelecionarRemedio.Bandage:
-                    STATUSPLAYER.bandage += 1;
+
                     Mensagem.text = "";
                     break;
                 case SelecionarRemedio.Morphine:
-                    STATUSPLAYER.morphine += 1;
+
                     Mensagem.text = "";
                     break;
                 case SelecionarRemedio.Antibiotics:
-                    STATUSPLAYER.antibiotics += 1;
+
                     Mensagem.text = "";
                     break;
             }

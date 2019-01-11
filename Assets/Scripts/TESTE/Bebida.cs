@@ -32,15 +32,15 @@ public class Bebida : MonoBehaviour
             switch (Bebidas)
             {
                 case SetarBebidas.Water:
-                    STATUSPLAYER.agua += 1;
+
                     Mensagem.text = "";
                     break;
                 case SetarBebidas.Juice:
-                    STATUSPLAYER.suco += 1;
+
                     Mensagem.text = "";
                     break;
                 case SetarBebidas.Coca:
-                    STATUSPLAYER.coca += 1;
+
                     Mensagem.text = "";
                     break;
             }

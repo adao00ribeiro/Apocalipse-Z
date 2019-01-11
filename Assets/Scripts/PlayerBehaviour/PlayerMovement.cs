@@ -215,7 +215,7 @@ public class PlayerMovement  :PlayerVariaveis
     }
     public void recebeDano(int dano)
     {
-        this.Vida = this.Vida - GetComponent<EnemyBase>().dano;
+        this.Vida = this.Vida - dano;
     }
 
     void RestaurandoStamina()
