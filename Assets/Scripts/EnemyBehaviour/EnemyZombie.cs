@@ -59,7 +59,7 @@ namespace Snake.ApocalipseZ.Enemys {
                         target = newPos;
                     }
 
-                    agent.speed = speedMoviment;
+                    agent.speed = 0.5f;
                     agent.SetDestination(target);
                 }
 
