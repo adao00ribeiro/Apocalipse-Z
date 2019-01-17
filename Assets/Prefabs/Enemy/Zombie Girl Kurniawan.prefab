@@ -825,7 +825,7 @@ GameObject:
   - component: {fileID: 79478179756104992}
   m_Layer: 0
   m_Name: Zombie Girl Kurniawan
-  m_TagString: Untagged
+  m_TagString: Zumbi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

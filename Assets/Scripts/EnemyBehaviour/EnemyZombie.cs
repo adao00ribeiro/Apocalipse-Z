@@ -32,7 +32,6 @@ namespace Snake.ApocalipseZ.Enemys {
                 if (atack == true)
                 {
                     StartCoroutine("Batendo");
-                    Debug.Log("Bateu");
                 }
             }
             else

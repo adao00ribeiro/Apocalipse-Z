@@ -64,7 +64,8 @@ namespace Snake.ApocalipseZ.Enemys {
         }
 
         [Server]
-        public bool ApplyDamage(float hit) {
+        public bool ApplyDamage(float hit)
+        {
             bool died = false;
 			
 			currentHealth -= hit;

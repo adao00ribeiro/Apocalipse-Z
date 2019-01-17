@@ -196,13 +196,17 @@ public class PlayerMovement  :PlayerVariaveis
             componentesDesativados[i].enabled = false;
         }
     }
-    public void recebeDano(int dano)
+    public void recebeDano(float dano)
     {
         this.Vida = this.Vida - dano;
     }
 
     void RestaurandoStamina()
     {
+        if (this.Stamina1 > 1000)
+        {
+            Stamina1 = 1000;
+        }
         this.Stamina1 += 5;
     }
 

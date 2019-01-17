@@ -1757,7 +1757,7 @@ GameObject:
   - component: {fileID: 9054494450061899127}
   m_Layer: 0
   m_Name: Zombie CopZombie
-  m_TagString: Untagged
+  m_TagString: Zumbi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1811,14 +1811,20 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   state: 0
   health: 100
-  speedMoviment: 0.5
-  strong: 0
-  distanceForAttack: 0
-  distancePatrol: 10
   respawnTime: 0
+  dano: 0
+  speedMoviment: 0.5
+  distancePatrol: 10
+  TimeAttack: 0
+  distanceForAtack: 0
+  distanceForFollow: 0
+  distanceForWalk: 0
+  distanceOfPlayer: 0
+  atack: 0
   attack: {fileID: 0}
   hit: {fileID: 0}
   die: {fileID: 0}
+  player: {fileID: 0}
 --- !u!95 &95739141745598812
 Animator:
   serializedVersion: 3

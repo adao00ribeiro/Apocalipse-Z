@@ -8,6 +8,7 @@ TagManager:
   - Medicaments
   - Foods
   - swat
+  - Zumbi
   layers:
   - Default
   - TransparentFX
