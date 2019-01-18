@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmaBranca_Generica : MonoBehaviour
+public abstract class ArmaBranca_Generica : MonoBehaviour
 {
     public string Nome;
 
@@ -12,4 +12,5 @@ public class ArmaBranca_Generica : MonoBehaviour
 
     public float TempoDeAtaque;
 
+    public abstract void Atirar();
 }

@@ -15,8 +15,14 @@ public class FirstPersonController : MonoBehaviour {
 	
 	[SerializeField]
 	private float speed;
-	
-	[SerializeField]
+
+
+    public Transform packArmas;
+    public GameObject ArmaEquipada;
+    public float vida;
+
+
+    [SerializeField]
 	private bool inAirControl = true;
 
 	[SerializeField]
@@ -81,7 +87,12 @@ public class FirstPersonController : MonoBehaviour {
 	private Transform cam;
 	// Use this for initialization
 	void Start () {
-		old_state =  normal;
+        foreach (Transform arma in packArmas)
+        {
+            arma.gameObject.SetActive(true);
+            ArmaEquipada = arma.gameObject;
+        }
+        old_state =  normal;
 		ch = GetComponent<CharacterController>();
 		cam = transform.FindChild("Camera");
 	}
@@ -89,8 +100,28 @@ public class FirstPersonController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Look ();
+        vida = vida;
+        if (Input.GetMouseButton(0))
+        {
+            if (ArmaEquipada != null)
+            {
+                if (ArmaEquipada.tag == "ArmaBranca")
+                {
+                    ArmaEquipada.GetComponent<ArmaBranca_Generica>().Atirar();
+                }
+                else
+                {
+                    ArmaEquipada.GetComponent<Arma_Generica>().Atirar();
+                }
+            }
+        }
 		Move ();
 	}
+
+    public void RecebeuDano(float dano)
+    {
+        vida -= dano;
+    }
 
 	IEnumerator Fall()
 	{

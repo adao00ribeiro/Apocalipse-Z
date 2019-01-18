@@ -12,17 +12,23 @@ public class Meele : ArmaBranca_Generica
 
     void Start()
     {
+        transform.tag = "ArmaBranca";
         // procura a camera do player!
         cam = FindObjectOfType<Camera>();
 
         Atacando = this.TempoDeAtaque;
     }
 
-
-    void Update()
+    private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && Atacando == this.TempoDeAtaque)
-        {
+        Cronometro();
+    }
+
+    override
+    public void Atirar()
+    {     
+        if(Atacando == TempoDeAtaque)
+        { 
             Atacando = 0;
             //pega a posição do centro da tela e acerta o alvo se estiver no alcance
             RaycastHit hit;
@@ -43,9 +49,8 @@ public class Meele : ArmaBranca_Generica
             else
             {
                 Debug.Log("Não alcançou");
-            }            
-        }
-        Cronometro();
+            }
+            }
     }
 
     void Cronometro()
