@@ -12,7 +12,7 @@ public class PlayerUI : MonoBehaviour
 
 
     [SerializeField]
-    private Arma_Generica Arma;
+    private Arma_de_Fogo Arma;
     public Text nomearma;
     public Text numerodebalas;
 
@@ -31,6 +31,6 @@ public class PlayerUI : MonoBehaviour
     public void setPlayer(PlayerMovement player) {
 
         this.player = player;
-        Arma = player.ArmaEquipada.GetComponent<Arma_Generica>();
+        Arma = player.ArmaEquipada.GetComponent<Arma_de_Fogo>();
     }
 }

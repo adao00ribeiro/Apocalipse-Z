@@ -7,6 +7,7 @@ public class Meele : ArmaBranca_Generica
 {
     [SerializeField] private float Atacando;
 
+    private PlayerMovement player;
     private Camera cam;
 
 
@@ -34,17 +35,16 @@ public class Meele : ArmaBranca_Generica
             RaycastHit hit;
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, this.Distancia))
             {
-                Debug.Log("Bateu");
+                Debug.Log("Acertou");
                 //se o alvo for um player ele recebera o dano da arma
-                 if(tag == "Player")
-                {
-                    GetComponent<PlayerMovement>().recebeDano(Dano);
-                }
+
+
                 //se o alvo for um zumbi ele recebera o dano da arma
                 if (tag == "Zumbi")
                 {
-                    GetComponent<EnemyBase>().ApplyDamage(Dano);
+                    GetComponent<EnemyBase>().ApplyDamage(DanoArma);
                 }
+                
             }
             else
             {

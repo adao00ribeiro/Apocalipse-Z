@@ -2,15 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ArmaBranca_Generica : MonoBehaviour
+public class ArmaBranca_Generica : Arma_Generica
 {
-    public string Nome;
-
-    public float Dano;
-
     public float Distancia;
 
     public float TempoDeAtaque;
 
-    public abstract void Atirar();
+    public override void Atirar() {}
 }

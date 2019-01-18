@@ -474,8 +474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9e9045f69dfa647901b4c3cdf16120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Nome: machado
-  Dano: 20
+  nomeArma: machado
+  DanoArma: 20
   Distancia: 2
   TempoDeAtaque: 1.7
   Atacando: 0

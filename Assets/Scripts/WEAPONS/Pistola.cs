@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pistola : Arma_Generica
+public class Pistola : Arma_de_Fogo
 {
    
     // Start is called before the first frame update

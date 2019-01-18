@@ -157,15 +157,9 @@ public class PlayerMovement  :PlayerVariaveis
         }
         if (Input.GetMouseButton(0))
         {
-            if (ArmaEquipada != null) {
-                if(ArmaEquipada.tag == "ArmaBranca")
-                {
-                    ArmaEquipada.GetComponent<ArmaBranca_Generica>().Atirar();
-                }
-                else
-                {
-                    ArmaEquipada.GetComponent<Arma_Generica>().Atirar();
-                }               
+            if (ArmaEquipada != null)
+            {
+                ArmaEquipada.GetComponent<Arma_Generica>().Atirar();  
             }
            
 
@@ -205,7 +199,7 @@ public class PlayerMovement  :PlayerVariaveis
     }
     public void recebeDano(float dano)
     {
-        this.Vida = this.Vida - dano;
+        this.Vida -= dano;
     }
 
     void RestaurandoStamina()
