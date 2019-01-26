@@ -105,17 +105,12 @@ public class FirstPersonController : MonoBehaviour {
         {
             if (ArmaEquipada != null)
             {
-                if (ArmaEquipada.tag == "ArmaBranca")
-                {
-                    ArmaEquipada.GetComponent<ArmaBranca_Generica>().Atirar();
-                }
-                else
-                {
-                    ArmaEquipada.GetComponent<Arma_Generica>().Atirar();
-                }
+                ArmaEquipada.GetComponent<Arma_Generica>().Atirar();
             }
+
+
         }
-		Move ();
+        Move ();
 	}
 
     public void RecebeuDano(float dano)

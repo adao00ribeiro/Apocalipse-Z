@@ -7,13 +7,12 @@ public class Meele : ArmaBranca_Generica
 {
     [SerializeField] private float Atacando;
 
-    private PlayerMovement player;
     private Camera cam;
 
-
-    void Start()
-    {
+     void Start()
+    {       
         transform.tag = "ArmaBranca";
+
         // procura a camera do player!
         cam = FindObjectOfType<Camera>();
 
@@ -33,11 +32,14 @@ public class Meele : ArmaBranca_Generica
             Atacando = 0;
             //pega a posição do centro da tela e acerta o alvo se estiver no alcance
             RaycastHit hit;
-            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, this.Distancia))
+            if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, Distancia))
             {
+                if (player.tag == "Player")
+                { 
                 Debug.Log("Acertou");
-                //se o alvo for um player ele recebera o dano da arma
-
+                    //se o alvo for um player ele recebera o dano da arma
+                    player.GetComponent<PlayerMovement>().recebeDano(DanoArma);
+                }
 
                 //se o alvo for um zumbi ele recebera o dano da arma
                 if (tag == "Zumbi")
