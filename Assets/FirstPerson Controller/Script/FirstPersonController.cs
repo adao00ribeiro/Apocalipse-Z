@@ -94,7 +94,7 @@ public class FirstPersonController : MonoBehaviour {
         }
         old_state =  normal;
 		ch = GetComponent<CharacterController>();
-		cam = transform.FindChild("Camera");
+		cam = transform.Find("Camera");
 	}
 
 	// Update is called once per frame
