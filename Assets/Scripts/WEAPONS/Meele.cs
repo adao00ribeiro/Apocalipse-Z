@@ -34,6 +34,7 @@ public class Meele : ArmaBranca_Generica
             RaycastHit hit;
             if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, Distancia))
             {
+                /*
                 if (player.tag == "Player")
                 { 
                 Debug.Log("Acertou");
@@ -46,7 +47,7 @@ public class Meele : ArmaBranca_Generica
                 {
                     GetComponent<EnemyBase>().ApplyDamage(DanoArma);
                 }
-                
+ */               
             }
             else
             {

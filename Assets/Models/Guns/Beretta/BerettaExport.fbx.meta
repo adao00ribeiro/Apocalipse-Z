@@ -123,12 +123,50 @@ ModelImporter:
     4300040: Cube.010
     4300042: Cube.011
     4300044: Circle.009
-  externalObjects: {}
+    6400000: Circle
+    6400002: Circle.001
+    6400004: Circle.002
+    6400006: Circle.003
+    6400008: Circle.004
+    6400010: Circle.005
+    6400012: Circle.006
+    6400014: Circle.007
+    6400016: Circle.008
+    6400018: Circle.009
+    6400020: Cube
+    6400022: Cube.001
+    6400024: Cube.002
+    6400026: Cube.003
+    6400028: Cube.004
+    6400030: Cube.005
+    6400032: Cube.006
+    6400034: Cube.007
+    6400036: Cube.008
+    6400038: Cube.009
+    6400040: Cube.010
+    6400042: Cube.011
+    6400044: Plane
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: db3e16abe3dcc03439cafaaae8f3161f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: f994ffde70eab5645bea205b7651f99c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: f68bfbca55666eb4a906f8d3740f83f0, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -157,6 +195,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -181,6 +220,9 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:

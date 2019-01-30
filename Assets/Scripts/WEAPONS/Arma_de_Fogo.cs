@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arma_de_Fogo : Arma_Generica
+public abstract class Arma_de_Fogo : Arma_Generica
 {
     [SerializeField]
     protected int balas;
@@ -13,8 +13,7 @@ public class Arma_de_Fogo : Arma_Generica
     public GameObject prefabBala;
     public Transform spawPoint;
 
-    public override void Atirar() {}
-
+    public bool isCinematic;
     public int getBalas()
     {
         return balas;

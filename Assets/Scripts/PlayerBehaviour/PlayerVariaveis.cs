@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 public class PlayerVariaveis : NetworkBehaviour
-{ 
-[Header("VARIAVEISPLAYER")]
-[SerializeField]
-private float vida;
-[SerializeField]
-private float Stamina;
-[SerializeField]
-private float Sede;
-[SerializeField]
-private float Fome;
-[SerializeField]
- private float speed;
+{
+    [Header("VARIAVEISPLAYER")]
+    [SerializeField]
+    private float vida;
+    [SerializeField]
+    private float Stamina;
+    [SerializeField]
+    private float Sede;
+    [SerializeField]
+    private float Fome;
+    [SerializeField]
+    private float speed;
     [SerializeField]
     private float walkSpeed;
+    [SerializeField]
+    private float silentWalk;
     [SerializeField]
     private float runSpeed;
     [SerializeField]
