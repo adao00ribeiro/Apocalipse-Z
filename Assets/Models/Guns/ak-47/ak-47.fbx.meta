@@ -44,11 +44,6 @@ ModelImporter:
     100076: Cylinder.016
     100078: Gatilho
     100080: Mira
-    100082: Point
-    100084: Point.001
-    100086: Point.002
-    100088: Point.003
-    100090: Point.004
     400000: //RootNode
     400002: Cano
     400004: Carregador
@@ -90,11 +85,6 @@ ModelImporter:
     400076: Cylinder.016
     400078: Gatilho
     400080: Mira
-    400082: Point
-    400084: Point.001
-    400086: Point.002
-    400088: Point.003
-    400090: Point.004
     2100000: Material.006
     2100002: Material.005
     2100004: Material.002
@@ -222,11 +212,6 @@ ModelImporter:
     4300074: Cube.002
     4300076: Cube.001
     4300078: Coronha
-    10800000: Point
-    10800002: Point.001
-    10800004: Point.002
-    10800006: Point.003
-    10800008: Point.004
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -261,6 +246,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -285,6 +271,9 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
