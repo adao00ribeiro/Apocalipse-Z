@@ -57,7 +57,10 @@ public class PlayerUI : MonoBehaviour
     public void setPlayer(PlayerMovement player) {
 
         this.player = player;
-        Arma = player.ArmaEquipada.GetComponent<Arma_de_Fogo>();
+        if (player.ArmaEquipada !=null) {
+            Arma = player.ArmaEquipada.GetComponent<Arma_de_Fogo>();
+        }
+        
        
     }
     public void setInventario(Transform inventario) {
